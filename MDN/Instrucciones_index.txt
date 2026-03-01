@@ -1,0 +1,7 @@
+Aquí están las instrucciones a seguir:
+
+Justo debajo de la etiqueta de apertura del <body>elemento, añada un título principal para el documento. Este debe estar dentro de una <h1>etiqueta de apertura y </h1>otra de cierre.
+Edite el contenido del párrafo para incluir texto sobre un tema que le parezca interesante.
+Haga que las palabras importantes se destaquen en negrita envolviéndolas dentro de un <strong>elemento.
+Añade dos enlaces a tu párrafo. Esto se consigue usando el <a>elemento.
+Añade una imagen a tu documento, como se explicó anteriormente en este artículo . Colócala debajo del párrafo. Si es demasiado grande para verla, añádele un widthatributo para reducirla.

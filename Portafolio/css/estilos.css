@@ -1,0 +1,27 @@
+/*CSS general de elementos*/
+body {
+    background-color: #141414;
+    color: white;
+}
+
+/*CSS IDs y Clase*/
+.eslogan {
+    color: #33CCFF;
+}
+.titleExpSkills {
+    color: #0E384C;
+}
+.expSkills {
+    color:#0E384C; 
+}
+/*Sección div*/
+.fondoBloque {
+    background-color: #092029;
+}
+/*Textos de bloque*/
+.titleBloque {
+    color: #33CCFF;
+}
+.textBloque {
+    color: #33CCFF; 
+}

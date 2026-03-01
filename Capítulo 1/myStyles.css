@@ -1,0 +1,42 @@
+body{
+    background-color: #222;
+    color: white;
+}
+h1{
+    text-align: center;
+}
+p{
+    color: white;
+}
+h2{
+    color: lightblue;
+}
+#demo{
+    color: lightgreen;
+}
+#tex{
+    background-color: #234;
+    text-align: justify;
+    margin: 0px;
+    padding: 0px;
+}
+#image{
+    text-align: center;
+    background-color: #234;
+    padding: 15px;
+    margin: 0px;
+}
+.demo1{
+    font-size: 18px;
+    color: lightseagreen;
+}
+.enlace{
+    color: white;
+}
+p{
+    font-size: 20px;
+    color: lightskyblue;
+}
+button{
+    size: 250px;
+}

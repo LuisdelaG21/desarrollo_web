@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Estructuras anidadas-->
+<!--Operador > -->
+<!--Nos permite desescalar elementos una tras otras en una jerarquía-->
+<!--Ejemplo 1: div>ul>li-->
+<div>
+    <ul>
+        <li></li>
+    </ul>
+</div>
+<!--Ejemplo 2: h1>h2>div>p-->
+<h1>
+    <h2>
+        <div>
+            <p></p>
+        </div>
+    </h2>
+</h1>
+
+<!--Operador + -->
+<!--Nos permite colocar elementos en la misma jerarquía o nivel-->
+<!--Ejemplo 1: div+p+bq-->
+<div></div>
+<p></p>
+<blockquote></blockquote>
+
+<!--Operador * -->
+<!--Nos permite repetir n veces un elemento -->
+<!--Ejemplo 1: ul>li*5-->
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<!--Ejemplo 2 tabla: table>tr>td*4-->
+<table>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<!--Operador () -->
+<!--Nos permite agrupar varios elementos dentro de un elemento -->
+<!--Ejemplo 1: div>(h2+h3+p), de hecho para este ejemplo se pueden omitir los (), pero para
+ejemplos con más agrupaciones en el mismo nivel es muy necesario-->
+<div>
+    <h2></h2>
+    <h3></h3>
+    <p></p>
+</div>
+
+<!--Ejemplo 2 tabla compleja: table>(thead>tr>th3)+(tbody>tr>td*3)-->
+<table>
+    <thead>
+        <tr>
+            <th3>Soy yo</th3>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Hola</td>
+            <td>Hola</td>
+            <td>Hola</td>
+        </tr>
+    </tbody>
+</table>
+
+<!--Operador ^ -->
+<!--Nos permite escalar o subir de nivel un elemento -->
+<!--Ejemplo 1: div+div>p>span+em^bq, en este ejemplo se ve como el elemento
+bq no se coloca dentro del elemento p, que es la jerarquía que se esta manejando
+desde que se declaró p>. Por lo tanto, el subir de nivel a bq se refiere a quedar en
+la misma jerarquía que p. Se entiende como regresar un nivel antes para declarar
+un elemento nuevo.-->
+<div></div>
+<div>
+    <p><span></span><em></em></p>
+    <blockquote></blockquote>
+</div>   
+</body>
+</html>

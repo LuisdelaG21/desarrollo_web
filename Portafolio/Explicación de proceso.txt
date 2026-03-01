@@ -1,0 +1,407 @@
+En este documento se explican conceptos muy importantes sobre el lenguaje html y los temas vistos en el 
+curso de Crea páginas Web con HTML y CSS.
+
+HTML
+Las siglas HTML significan HyperText Markup Language, que en español se traduce como Lenguaje de Marcado de Hipertexto. 
+Es el lenguaje estándar para la creación de páginas web, utilizado para estructurar el contenido y darle formato.
+
+La estructura básica de un documento HTML (el más usado actualmente HTML5) es el siguiente:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+Cada parte tiene su explicación y definición (recomendamos revisar el manual de Mozila MDN), pero 
+lo más importante para mencionar, es que con esta estructura el head nos permite declarar metadatos importantes
+de la página web, pero no visibles en el contenido del navegador web, mientras que el apartado body nos 
+permite colocar todo el contenido deseado y visible: texto, imágenes, títulos, etc,
+
+Un elemento HTML esta conformado por una etiqueta de inicio(apertura), seguido del contenido y finalizando con una 
+etiqueta de cierre, no obstante hay algunos que no siguen necesariamente este patrón y son llamados elementos
+vacíos o void. 
+
+Las etiquetas se reconocen por los corchetes angulares <>. Algunos ejemplos son <p></p>, <h1></h1>, <li></li>.
+
+Existen dos tipos de elementos:
+
+    Elementos de bloque. Son elementos y por ende, etiquetas que incorporan contenido y forman un espacio en forma
+    de contenedor o bloque para cada elemento. Cuando hacemos una página web es  muy recomendable agrupar los contenidos y
+    elementos, en un elemento div, ya que este sirve como contenedor que en sí no tiene un tamaño o contenido especifíco
+    por si solo, sino que se adapta dependiendo de lo que vayamos agregando dentro de el parráfos, imágenes, etc.
+    Ejemplos: div, p, h1, h2.
+
+    Elementos en línea. Son aquellos que no comienzan en una nueva línea y solo ocupan el espacio necesario para mostrar su contenido. 
+    A diferencia de los elementos de bloque, no generan un salto de línea antes ni después, permitiendo que varios elementos en línea 
+    se muestren uno al lado del otro en la misma línea. Digamos que son contenedores que engloban contenido especifíco para después
+    modificarlos en cuanto a diseño, formato, etc. Por ejemplo, podemos usar un elementos span para englobar una frase dentro de un
+    parráfo, mismo que después mediante el uso de CSS podrá modificarse su color, tamaño de letra, fuente, etc. Es una muy buena 
+    práctica en HTML. Ejemplos: span, cite, strong, em.
+
+Hay algunos elementos que aún son reconocidos por los oredenadores, pero que ya no son recomendables utilizar debido a que CSS se
+encarga de hacer lo que estas etiquetas están destinadas a realizar. Por ejemplo el elemento en línea b, big, entre otros.
+
+*Uso de tablas
+
+Las tablas son elementos que podemos usar en HTMl para definir espacios bidimensionales en donde podremos colocar contenido.
+Como los otros elementos, ésta comienza con una etiqueta de abertura <table> y de cerradura </table>. Dentro de ella puede haber tres 
+partes: thead (encabezado), tbody (cuerpo) y tfoot (pie).
+
+Para estructurar el contenido deseado podremos definir dentro del tbody el número de filas o renglones que queremos colocar. Esto
+se hace con el elemento <tr> elementos td </tr>. Cada vez que queramos añadir una fila, colocaremos un tr.
+
+Dentro de tr, podremos colocar elementos de cada columna deseada, esto se logra usando el elemento <td> contenido </td>.
+
+Para el caso de la cabecera (thead), funciona tambien el definir elementos td para escribir datos que son títulos para las 
+columnas de la tabla. Pero es más recomendado usar el elemento <th> contenido </th> para dar un formato de título dentro de
+nuestro documento HTML. Es más, si queremos combinar varias casillas de columa usamos el atributo colspan = "número de columnas" 
+para unirlas y escribir cierto contenido.
+
+Ejemplo: 
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="4">Ejemplo de bloque de experiencias</th> //Para el caso de filas se usa: rowspan
+                        <td> titulo 1 </td> //funciona de igual manera pero solo en una columna
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Modelado 3D</td>
+                        <td>Aplicaciones móviles</td>
+                        <td>Apps educativas</td>
+                        <td>Páginas Web</td>
+                    </tr>
+                    <tr>
+                        <td>MAP AI</td>
+                        <td>Atomik AR</td>
+                        <td>Alebrain</td>
+                        <td>Vainylla</td>
+                    </tr>
+                </tbody>
+            </table>
+
+*Uso de imágenes
+
+Las imágenes dentro de HTML se pueden introducir con el uso del elemento img, que a diferencia de los elementos comunes que
+hemos estudiado, este elemento tiene dos "atributos" obligatorios que hacen que la imagen funcione. Estos atributos son:
+
+    src="URL de la imagen"
+    alt="descripción de la imagen (no es visible en el navegador a excepción de cuando la imagen está rota)"
+
+Para darte más contexto, un atributo consta de un nombre seguido del signo = y un valor entre paréntesis. El atributo src
+es la dirección de la imagen, esta puede ser la dirección URL de una imagen de internet, de un repositorio o de nuestro equipo, 
+para este último caso debemos asegurarnos que la imagen que queremos colocar se encuentra en la misma carpeta que el archivo
+index.html o mejor aún, en una subcarpeta por debajo de index.html; de esta manera, podemos escribir lo siguiente y acceder a ella:
+
+    src="./Imagenes/Imagen_portada.png"
+
+Lo anterior, muestra un ejemplo de una imagen con nombre Imagen_portada.png que está ubicada dentro de la carpeta Imagenes al mismo
+nivel del archivo index.html, mismo archivo que es una "ubicación relativa" en el documento y se denota con los símbolos ./ al inicio
+del URL.
+
+El artributo alt nos permite agregar un títolo o descripción de la imagen, la cual no será visible en el navegador a menos que la 
+imagen rompa por algunas razones viables, por ejemplo, escribir mal la URL de la imagen.
+
+Para escalar la imagen a un tamaño más cómodo para nuestro contenido existen otros atributos llamados width (ancho) y height (alto)
+los cuales nos permiten definir el tamaño de las dimensiones en pixeles, ejemplo:
+
+    widht="300" y widht="300px" no es lo mismo, no se debe utilizar unidades para definir estos atributos ya que se definen como pixeles por defecto
+    height="250" 
+
+Se recomienda no usar los dos simultáneamente ya que podría crear distorsiones de escala en la imagen.
+Recuerda que no estamos diseñando, sino solo dando la estructura de nuestro documento HTML.
+
+*El recorte de imágenes y su importancia en la optimización de una página web
+
+A menudo solemos descargar imágenes de alta resolución y con dimensiones grandes en pixeles, por ejemplo, imágenes de más de 1000px
+de ancho o de alto. Esto podría costarle tan solo un poco más de trabajo al servidor (ya sea local o en línea) en cargarlas y que
+sean visibles en una página web. Hablamos de milisegundos que podrían tardar de entre 3 a 8 por lo regular. 
+
+Aunque es muy posible y aceptable usar los atributos widht y height dentro de una etiqueta <img> para ajustar una imagen,
+es más recomendable usar una herramienta externa que nos ayude a reescalar la imagen en pixeles para poder utilizarla de 
+mejor manera dentro de html. Un buen ejemplo de herramienta de edición de imagen es GIMP, en donde podemos escalar una imagen
+de forma homogénea. Por ejemplo, una imagen de 1000px * 800px podría quedar reescalada a 250px * 200px. Esto, a nivel de tamaño de
+imagen dentro de nuestro equipo o de un almacenamiento en línea podría reducir consideradamente los kB (kilobytes) de una imagen.
+
+Es importante señalar que no es lo mismo dimensiones de imagen que resolución; lo primero hace referencia al tamaño físico dado 
+en pixeles y lo segundo es la densidad de esos pixeles, es decir la cantidad de pixeles que hay por una unidad de medida como las 
+pulgadas, centímetros, etc; muchas veces conocido como ppp (pixeles por pulgada). Otro concepto más es la de la profundidad en bits
+o profundidad de color, y esta hace referencia a la cantidad de colores que puede utilizar cada pixel dentro de una imagen, por ejemplo,
+    Una imagen con 1 bit por píxel solo puede tener dos colores (blanco y negro). 
+    Una imagen con 8 bits por píxel puede tener 256 colores diferentes por canal (rojo, verde, azul), etc.
+
+Como herramienta útil de desarrollador recuerda usar el entorno de desarrollador dentro de un navegador web (ctrl+shift+i), en el 
+apartado NetWork (Red) podrás ver el tiempo que tarda cada recurso de tu página web en cargar. Una imagen recortada podría ayudar 
+aunque sea unos milisegundos más en cargar una página web.
+
+*La validación de nuestro documento HTML
+
+Existen herramientas muy útiles en la Web para determinar y asegurarnos de que nuestro documento HTML cumpla con los 
+éstandares de codificación, sintaxis y semántica. Una de ellas es el validador de W3.
+    validator.w3.org 
+En ella podremos importar nuestro archivo .html, o si tuvieramos nuestra página web en un dominio y en línea, podríamos 
+colocar el URL especifíco para hacer la validación.
+
+De cualquier forma, con esta herramienta podremos detectar los errores y advertencias que quizá tenga nuestro documento html para poder
+resolverlos y reescribirlos. Es importante hacer uso de un validador, ya que si nosotros pasamos por alto cualquier error de sintaxis
+como, olvidar cerrar una etiqueta u olvidar una jerarquía <tr> en una tabla, muchas veces los navegadores intentan resolver estos 
+problemas y corrigen el código en el panel de desarrollador (ctrl+shift+i). No obstante, un validador no permite que esto suceda, sino
+que nos muestra los errores especificos en cada línea de código.
+
+Algunos errores comunes serían:
+    Olvidar cerrar una etiqueta
+    No colocar el atributo de lenguaje lang
+    No especificar el tipo de documento <!DOCTYPE html>
+    Colocar unidades en los atributos widht y height
+
+----------*-------------*----------------*--------------*------------------*----------------*-----------------*----------------*------------
+
+CSS
+Las siglas CSS significan Cascading Style Sheets (Hojas de Estilo en Cascada). Es un lenguaje utilizado para definir la presentación
+y el estilo de documentos web, como páginas HTML. CSS permite controlar aspectos visuales como el color, la fuente, el diseño y la 
+posición de los elementos en una página web.
+
+Ahora comenzaremos a definir los estilos y estados de arte que colocaremos en nuestro documento HTML, CSS nos permite personalizar 
+el diseño y visibilidad de todo nuestro contenido. 
+Te recomiendo una página web llamada "awwwards" en donde podrás encontrar múltiples diseños premiados y desarrollados por profesionales 
+y diseñadores importantes. Esto te servirá de base o referencia para entender y retomar un estilo o aspecto de arte que quieras 
+adaptar a tus sitios web. 
+    awwwards
+
+Ahora bien, existen tres formas de incorporar diseño a nuestra página HTML y van desde la menos recomendada a la más utilizada en 
+muchas de las empresas y por desarrolladores del mundo del diseño web, y es que, aunque las tres funcionan de forma adecuada, el 
+contexto y los requerimientos que se te presenten influirán de la decisión de como quieres incorporar CSS a tu página web.
+
+~ Forma número 1: CSS online (en línea)
+Esta forma se basa en colocar "atributos" dentro de cada elemento de HTML como el body, h1, p, etc., por eso se llama en línea, porque
+se coloca dentro del documento HTML en cada elemento que queramos modificar. Esta primera forma no es recomendable, ya que mezcla
+dos aspectos que no tiene que ver por su complejidad y que entorpecen la comprensión del código para cualquier persona que quiera
+modificar nuestro trabajo. Recuerda que mezclar HTML y CSS no es la mejor opción.
+
+Ejemplo:
+    <body style="background-color: #222;"> //Esto hará que el color de fondo de nuestra página web se vuelva oscura
+
+~ Forma número 2: CSS interno 
+Esta forma consiste en colocar los estilos (elemento style) dentro del head de nuestro archivo HTML. Recuerdas que esta parte de nuestro
+documento está reservado para metadatos y estilos CSS, ya que estos datos no son visibles en los navegadores. Esta es una manera un poco
+más organizada de incorporar CSS, pero sigue combinando dos estructuras que no se recomiendan que estén mezcladas. Tanto esta forma como
+la anterior suelen ser imprácticas si lo que queremos es copiar o heredar los estilos a más páginas web que queremos diseñar en el
+futuro.
+
+Ejemplo: 
+    <head>
+        <meta charset="UTF-8">
+        <title>Portafolio de Luis Hernández</title>   
+        <style>
+            body{
+                background-color: #888;
+            }
+        </style>
+    </head>
+
+~ Forma número 3: CSS externo
+Esta es la forma más recomendada y práctica de incorporar CSS a nuestros documentos HTML, y es que esta forma, consiste en crear
+un nuevo archivo .css en la cual se incluirán los estilos correspondientes a cada elemento de nuestro HTML. Una vez realizado, desde 
+la parte <head> de nuestro documento, crearemos un vínculo que apunte a ese archivo, al igual que lo hicimos con nuestras imágenes.
+Ejemplo:
+    <link rel="stylesheet" href="./css/estilos.css">
+
+La parte rel, hace referencia al tipo de archivo, en este caso stylesheet es la parte CSS y nos dice que es una "hoja de estilo".
+La parte href es la ubicación del archivo.
+Cabe resaltar que una buena forma de acceder a los demás archivos es teniendo al archivo index.html al mismo nivel de las otras 
+carpetas en donde se encuentran los recursos que queremos linkear o importar.
+Ejemplo:
+    >Portafolio
+        >index.html
+        >imagenes
+            >imagen_portada.png
+        >css
+            >estilos.css
+        
+Con la estructura anterior, si queremos acceder a la imagen o al archivo .css, basta con colocar ./ y el autocompletador nos mostrará
+las rutas disponibles a las que podemos acceder.
+
+Con esta última forma de implementación de CSS en una página web, tenemos varias posibilidades que hacen que nuestro trabajo y diseño
+con nuestras páginas web sea más sencillo. Por ejemplo, si tengo un solo estilo determinado que quiero utilizar con varias páginas web, 
+podría crear links y referencias a cada uno con mi archivo .css, cosa que no sería posibe si uso CSS online o CSS interno, ya que no 
+puedo vincular ningún estilo CSS que pertenezca a un archivo HTML.
+
+
+* Eligiendo colores: selectores y atributos
+Ahora que sabemos la forma más recomendada de utilizar CSS en nuestras páginas web, debemos conocer las partes de la estructura de un
+estilo, por ejemplo, dentro de nuestro archivo .css tenemos lo siguiente:
+    
+    body {
+        background-color: bisque;
+    }
+
+body: recibe el nombre de selector y es un elemento dentro de HTML.
+background-color: es una propiedad.
+bisque: es el valor de la propiedad, puede estar dado por el nombre de colores o incluso más utilizado el hexadecimal de cualquier
+color que queramos.
+
+Finalmente, tanto la propiedad como su valor forman una "declaración".
+
+Body es un caso muy importante debido a que es el elemento que engloba todo el contenido en nuestro documento HTML, es decir, dentro de 
+body se encuentra todo lo que será visible dentro de la página web y en términos de lenguaje y jerarquía, todo lo que se encuentra dentro
+de body son hijos de este elemento padre. Por lo tanto, si nosotros colocamos una declaración como:
+
+    color: white;
+
+dentro del selector body, esta declaración se "heredará" a todos los elementos que formen parte de este elemento; estamos hablando de 
+parráfos, elementos h, strong, cites, etc. 
+Es mucho más visible dentro del entorno de desarrollador de nuestro navegador web (ctrl+shift+i), en el cual al selecionar un elemento
+hijo como p o h1, en el apartado style veremos como el elemento body le hereda los valores de color a este elemento. Incluso podemos 
+deseleccionar algunas propiedades y ver el resultado en el navegador y ver el archivo .css de donde se obtienen los diseños.
+
+*Herramientas para definir y elegir colores
+Los colores que podemos utilizar dentro de los valores de propiedad en CSS son muy extensos y su representación escrita también lo es.
+Existen varias formas de escribir un color pero las más utilzadas son los siguientes formatos:
+    
+    %Usando una palabra clave.
+    %Usando el sistema RGB cubic-coordinate (usando #-hexadecimal o las notaciones funcionales rgb() y rgba() )
+    %Usando el sistema HSL cylindrical-coordinate (usando las notaciones funcionales hsl() y hsla())
+
+/* Todos estos ejemplos son el mismo color RGB: */
+
+ #f03
+ #F03
+ #ff0033
+ #FF0033
+ rgb(255,0,51)
+ rgb(255, 0, 51)
+ rgb(255, 0, 51.2) /* ¡ERROR! No uses número decimales , usa enteros*/
+ rgb(100%,0%,20%)
+ rgb(100%, 0%, 20%)
+ rgb(100%, 0, 20%) /* ¡ERROR! No mezcles notaciones de enteros y de porcentajes*/
+
+Toda la información relacionada a los formatos de color usados y su técnica de sintaxis se encuentra en el siguiente link o en la
+documentación de Mozila (MDN) en el apartado HTML y CSS.
+    https://developer.mozilla.org/es/docs/Web/CSS/color_value
+
+En internet existen varias páginas y herramientas que podemos utilizar para hacer la elección de colores para nuestros diseños, entre
+ellos los más recomendados:
+
+    %Color picker (HTML color codes), nos ofrece toda la gama de colores en hexadecimal, rgb y muchos otros formatos
+    %Extensión Colorzilla de Chrome, nos da una herramienta de gotero para copiar colores de imágnenes en internet
+    %Color Tool, nos ofrece variaciones de colores en distintos tonos
+    %Sitios web Adobe Color, en los apartados tendencias y explorar podremos encontrar combinaciones de colores
+
+>>>Selectores y su clasificación 
+Ya sabemos que para el caso de CSS nosotros trabajamos con "selectores". Estos se definen como patrones de elementos y otros términos que
+indican al navegador que elementos HMTL deben seleccionarse y modificarse. Me gusta pensarlos como identificadores, pero no de libre escritura, sino
+asociados a un elemento, un conjunto de elementos o una lista de elementos en HTML, en otras palabras, estos selectores pueden apuntar a uno 
+o más elementos y ajustar sus propiedades.
+
+Un selectore es la primera parte de una regla CSS para agregar estilo a los elementos HMTL, la estructura es la siguiente:
+    selector --> propiedad --> valor de la propiedad 
+
+    La unión de la propiead y su valor forman una "declaración" y a los elementos que engloba ese selector se les conoce como 
+    "sujeto del selector". Ejemplo:
+
+        h1 {
+            background-color: #222;
+        }
+
+*Selector de tipo
+Un selector de tipo a veces se denomina selector de nombre de etiqueta o selector de elemento, ya que selecciona un elemento o etiqueta HTML en el
+documento. Ejemplos:
+h1, p, h2, span, div, strong, etc.
+
+*Selectores de clase 
+Estos selectores engloban a todos los elementos HTML que contienen una clase en común. Es muy útil para agrupar elementos que deberán tener 
+propiedades similares. Un selector de clase se identifica porque lleva un punto (.) antes de poner el nombre de la clase, ejemplos:
+    .hastag {} , .myclass {}, .notebox {} , etc.
+
+Existen algunas variaciones, por ejemplo, supongamos que de todos los elementos de una clase, queremos solo modificar algunos elementos. Por lo tanto,
+no podemos modificar la clase entera (.hastag{}), sino en su lugar, nombrar el elemento seguido de un punto (.) y luego el nombre de la clase. De 
+esta forma somos más especificos con que elemento exactamente se desea estilizar. EjemplO.
+    Si tengo dos elementos (h1 y p) con class="hastag", y quiero solo modificar el color de un elemento (h1) pertenciente a ese conjunto, 
+    hacemos esto en CSS:
+        h1.hastag {
+            color: white;
+        }
+
+Otra variación se da cuando queremos que un selector actúe como selector principal para definir las propiedades de varios elementos, pero queremos 
+hacer algunos cambios entre los dichos elementos para que no sean completamente similares. Imagina que creas 3 divs{} y uno tiene un color estandar 
+#222, y propiedades básicas para ese div, ahora bien, quieres que los demás divs tengan lo valores esenciales de un contender pero solo que cambien en 
+color de borde. Haremos lo siguiente usando "dos clases" o incluso se pueden usar más de dos. 
+CSS
+    .notebox { 
+    border: 4px solid #222; 
+    padding: 0.5em; 
+    margin: 0.5em; 
+    } 
+    .notebox.warning { 
+    border-color: orange; 
+    font-weight: bold; 
+    } 
+    .notebox.danger { 
+    border-color: red; 
+    font-weight: bold; 
+    }
+Como puedes observar, tanto el segundo como el tercer selector heredan los valores border, padding, margin e incluso el color estandar #222 del
+selector principal, pero debido a sus segundas clases se puede acceder a ellos para modifcar su color. Para este caso los selectores siempre 
+priorizaran a las declaraciones "más especificas" (se verá a continuación). Por eso es que se cambia el color, aún cuando el selector principal 
+esta definido en #222.
+
+*Selector de Id
+El selector de ID, que distingue entre mayúsculas y minúsculas, comienza con un carácter  # en lugar de un punto, pero se usa de la misma manera 
+que un selector de clase. La diferencia radica en que un ID solo se puede usar una vez por página y a los elementos solo se les puede aplicar un 
+único valor ID. Ejemplos:
+    #bloqueIntro, #bloqueSec, etc.
+
+*Listas de selección
+Si tienes más de un elemento que usa el mismo CSS, los selectores individuales se pueden combinar en una lista de selectores para que la regla 
+se aplique a todos ellos. Ejemplo:
+h1, h2, p {
+    color: #222;
+}
+Nota: Debes tener cuidado de no tener errores de sintaxis, ya que de esa manera se emitirá toda la regla en todos los elementos enlistados.
+
+*Selector universal
+El selector universal se indica con un asterisco (*). Selecciona todo el contenido del documento.
+
+>>>Reglas conflictivas
+Estas son algunas reglas que debes tener en cuenta a la hora de crear estilos CSS, son sencillas y fáciles de presenciar.
+
+1. Herencia
+Si hacemos declaraciones sobre selectores que apuntan a elementos globales o padres en HTML (ejemplo body{}), estas propiedades y sus valores se
+heredarán a todos los elementos que están debajo de la jerarquía de body. Es simple y fácil de entender.
+
+2. Especificidad.
+Mientras más especifico sea la regla definida se tomará en cuenta la implementación de esa regla de primera mano. Esto es muy funcional, ya que si
+nosotros definimos un color de fuente en un selector global como body{}, este heredará ese valor a todos los demás elementos, pero a medida que 
+vayamos avanzando nosotros podremos dar estilos de otros colores a los elementos dentro de body {} como los son h1, h3, p, etc. las reglas de estos 
+últimos son más especificos ya que apuntan a un elemento más interno. Por lo tanto, el navegador priorizará estas reglas antes que la regla body{}.
+
+Esto suele ser muy útil y explica porque cuando modifcamos clases y segundas clases, se prioriza el cambio de diseño en estos elementos. Te lo explico,
+supón que tienes varios elementos h1 en tu HTML y todas tienen una clase="myclass", yo defino un <selector de tipo> para h1 y coloco un color blanco
+para la fuente:     
+    h1{
+        color: white;
+    }
+No obstante, quisiera que algunos h1, estuvieran en color azul. Pues, podría usar la clase y agregar la declaración. Debido a que la clase es un
+componente más interno y especifico, se priorizará este estilo en los elementos h1:
+    .myclass{
+        color: blue;
+    }
+
+3.Cascada
+Si definimos el mismo selector dos o más veces en el mismo archivo CSS, siempre se obedecerá al último que haya declarado. Ejemplo
+CSS
+    h1{
+        color: blue;
+    }
+    h1{
+        color: red;
+    }
+La fuente saldrá en color rojo, ya que se aplica el estilo de la regla que aparece en último lugar.
