@@ -45,7 +45,7 @@ Existen dos tipos de elementos:
     parráfo, mismo que después mediante el uso de CSS podrá modificarse su color, tamaño de letra, fuente, etc. Es una muy buena 
     práctica en HTML. Ejemplos: span, cite, strong, em.
 
-Hay algunos elementos que aún son reconocidos por los oredenadores, pero que ya no son recomendables utilizar debido a que CSS se
+Hay algunos elementos que aún son reconocidos por los ordenadores, pero que ya no son recomendables utilizar debido a que CSS se
 encarga de hacer lo que estas etiquetas están destinadas a realizar. Por ejemplo el elemento en línea b, big, entre otros.
 
 *Uso de tablas

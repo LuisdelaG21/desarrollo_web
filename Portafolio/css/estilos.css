@@ -1,9 +1,14 @@
 /*CSS general de elementos*/
+
 body {
     background-color: #141414;
     color: white;
 }
-
+div {
+    border: 0.5px solid #092029;
+    padding: 0px;
+    margin: 0px;
+}
 /*CSS IDs y Clase*/
 .eslogan {
     color: #33CCFF;
@@ -24,4 +29,8 @@ body {
 }
 .textBloque {
     color: #33CCFF; 
+}
+#proyectos {
+    padding: 10px;
+    margin: 0px;
 }
