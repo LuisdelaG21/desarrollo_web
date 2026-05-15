@@ -1,22 +1,18 @@
 body{
-    background-color: #222;
+    background-color: #18132a;
     color: white;
 }
-h1{
-    text-align: center;
-}
-p{
+h1, h2, p{
     color: white;
 }
-h2{
-    color: lightblue;
-}
+
 #demo{
     color: lightgreen;
 }
 #tex{
     background-color: #234;
-    text-align: justify;
+    color: white;
+    text-align: center;
     margin: 0px;
     padding: 0px;
 }

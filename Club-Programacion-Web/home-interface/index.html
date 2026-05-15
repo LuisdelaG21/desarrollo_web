@@ -13,16 +13,18 @@
     <!-- Enlaces a CSS y JavaScript
     Enlaces DNS para recursos externos como fuentes, iconos o bibliotecas, ejemplo:
     Tailwind. -->
+    <link rel="stylesheet" href="styles.css">
+    </style>
   </head>
-  <body style="background-color: #222; color: white;">
+  <body> <!-- CSS en línea -->
     <!-- Encabezado principal de la página -->
     <h1>Hola morty soy tu abuelo Rick Prime</h1>
-    <div style="background-color: aqua; color: chocolate;">
-      <h2>Por Luis Gustavo</h2>
-      <h3>Para hacer un cambio en VS code ejecuta CTRL+S</h3>
+    <div class="center">
+      <h2 id="autor">Por Luis Gustavo</h2>
+      <h3 id="descripcion">Para hacer un cambio en VS code ejecuta CTRL+S</h3>
     </div>
 
-    <div>
+    <div class="center">
       <p>
         Lorem ipsum dolor, sit <strong>amet</strong> consectetur adipisicing
         elit. <em>Minus</em> sapiente laudantium consequatur <br />
@@ -36,9 +38,11 @@
         target="_blank"
         rel="noopener"
         title="Link del sitio web"
-        >Visitar Marvel Rivals</a
+        ><button>Click me</button></a
       >
       <br />
+      <a href="https://www.dc.com/comics" target="_blank" rel="noopener" title="Link del sitio web"> <button> DC site </button></a>
+      <button type="button" onclick="alert('Hola Rick')">Hola mundo</button> <br>
       <img
         src="https://hips.hearstapps.com/hmg-prod/images/is-loki-alive-1618935098.jpeg?crop=0.669xw:1.00xh;0.177xw,0&resize=640:*"
         alt="Loki"
@@ -53,9 +57,11 @@
         width="50"
       />
       <br />
-    </div>
 
-    <div style="background-color: coral; color: blueviolet;">
+    </div>
+    
+
+    <div>
       <h2>Para formatear el código ejecutamos ALT+SHIFT+F</h2>
       <h3>Ejemplo de lista desordenada</h3>
       <ul>

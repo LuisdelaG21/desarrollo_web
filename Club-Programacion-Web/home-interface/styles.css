@@ -1,0 +1,25 @@
+body   {
+    background-color: #18132a;
+    color: white;
+}
+p{
+    color: red;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h1{
+    font-family: 'Arial Black', Gadget, sans-serif;
+    text-align: center;
+    padding: 0px 0px 0px 20px; /* sentido de las mecillas del reloj */
+    margin: 20px 10px; /* eje Y eje X */
+}
+h2, h3{
+    color: blue;
+}
+#autor, #descripcion{
+    color: maroon;
+}
+.center{
+    background-color: cadetblue;
+    color: skyblue;
+    text-align: center;
+}   
